@@ -92,6 +92,10 @@ textarea:not([rows]) {
 
 /* GLOBAL STYLES */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
