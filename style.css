@@ -1,0 +1,235 @@
+
+/* Custom CSS for Kevin Moore Fanpage */
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+ol {
+    margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    --clr-1: #003a70;
+    --clr-2: #fea181;
+    --clr-3: #96d6f8;
+    --clr-4: #e0f3fd;
+    --clr-5: #8dbedc;
+    --clr-6: #b7d7ea;
+    --clr-7: #e2eff6;
+}
+
+
+/* GLOBAL STYLES */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1 {
+   font-size: 3rem; 
+   font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+.section-title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding-block: 3rem;
+}
+
+.accent {
+    font-weight: 700;
+}
+
+/* HEADER */
+
+header, footer {
+    text-align: center;
+    background-color: var(--clr-1);
+    color: #ebebeb;
+    padding: 2rem;
+}
+
+.tagline {
+    font-size: 1.3rem;
+    font-family: 'Courgette', cursive;
+}
+
+.menu-item {
+    color: #ebebeb;
+    text-decoration: none;   
+}
+
+
+/* MAIN */
+
+
+.album-head {
+    padding: 2rem;
+    text-align: center;
+}
+
+.wrapper{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: 3rem;
+}
+
+
+.album {
+    --bg: transparent;
+    background-color: var(--bg);
+    padding-block: 3rem;
+}
+
+.album-1 {
+    /* --bg: #afcce9; */
+    --bg: var(--clr-2);
+}
+
+.album-2 {
+    /* --bg: #ffad99; */
+    --bg: var(--clr-3);
+}
+
+.album-3 {
+    /* --bg: #dec0a0; */
+    --bg: var(--clr-4);
+}
+
+.album-title {
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.album-cover {
+    border-radius: 10px;
+}
+
+.album-info {
+    line-height: 1.5;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+
+ 
+/* Info-box */
+
+ol li {
+    line-height: 1.5;
+    max-width: 20ch;
+    text-wrap: pretty;
+}
+
+
+
+/* GALLERY */
+
+.wrapper img {
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+.gallery-img {
+    border-radius: 10px;
+    
+    &:is(:focus, :hover) {
+        opacity: .9;
+        transition: .2s;
+    }
+}
+
+
+/* Responsive layout - makes a three column layout instead of a one-column layout */
+@media (min-width: 45rem) {
+    .wrapper{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+  }
+
+
+
+ 
