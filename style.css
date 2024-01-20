@@ -26,10 +26,16 @@ figure, blockquote, dl, dd {
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ol {
     margin: 0;
+}
+
+a {
+    display: inline-block;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -115,6 +121,7 @@ h2 {
     text-transform: uppercase;
     font-size: 1.5rem;
     padding-block: 3rem;
+    color: var(--clr-1);
 }
 
 .accent {
@@ -135,9 +142,22 @@ header, footer {
     font-family: 'Courgette', cursive;
 }
 
-.menu-item {
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+
+.menu-item-link {
     color: #ebebeb;
     text-decoration: none;   
+}
+
+.menu-item-link:is(:hover, :focus) {
+    color: var(--clr-2);
+    transition: .25s;
 }
 
 
@@ -165,17 +185,17 @@ header, footer {
 
 .album-1 {
     /* --bg: #afcce9; */
-    --bg: var(--clr-2);
+    /* --bg: var(--clr-2); */
 }
 
 .album-2 {
     /* --bg: #ffad99; */
-    --bg: var(--clr-3);
+    /* --bg: var(--clr-3); */
 }
 
 .album-3 {
     /* --bg: #dec0a0; */
-    --bg: var(--clr-4);
+    /* --bg: var(--clr-4); */
 }
 
 .album-title {
@@ -223,6 +243,35 @@ ol li {
         opacity: .9;
         transition: .2s;
     }
+}
+
+/* LYRICS QUOTES */
+
+.quotes {
+    display: grid;
+    place-content: center;
+    gap: 3rem;
+    padding-block: 3rem;
+    /* background-color: var(--clr-7); */
+}
+
+
+.lyric {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.lyric-origin {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Montserrat';
+}
+
+/* FOOTER */
+
+footer a:is(:hover) {
+    color: var(--clr-2);
+    transition: .2s;
 }
 
 
