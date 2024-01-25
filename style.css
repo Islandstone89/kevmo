@@ -121,6 +121,9 @@ textarea:not([rows]) {
     --clr-test3-mod1: #E9F5FF;
     --clr-test3-mod2: #D6EDFF;
 
+    --clr-gold: #683E00;
+    --clr-blue: #00C6FF;
+
 }
 
 
@@ -159,8 +162,9 @@ h2 {
 }
 
 .wrapper {
+    --gap: 3rem;
     display: grid;
-    gap: 2rem;
+    gap: var(--gap);
     grid-template-columns: 1fr;
     padding: 3rem;
 }
@@ -177,6 +181,7 @@ header, footer {
 .tagline {
     font-size: 1.3rem;
     font-family: 'Courgette', cursive;
+    margin-block: .5rem;
 }
 
 .menu {
@@ -189,12 +194,29 @@ header, footer {
 
 .menu-item__link {
     color: var(--clr-test3);
-    text-decoration: none;   
+    text-underline-offset: .5rem;
+    text-decoration-color: var(--clr-test5);
+    text-decoration: none;
+    position: relative;
 }
 
 .menu-item__link:is(:hover, :focus) {
-    color: var(--clr-test5);
-    transition: .25s;
+    color: var(--clr-blue);
+}
+
+.menu-item__link::after {
+    display: block;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--clr-blue);
+    position: absolute;
+    bottom: -.25rem;
+    transition: width .3s ease-in-out;
+}
+
+.menu-item__link:is(:hover, :focus)::after {
+    width: 100%;
 }
 
 
@@ -212,7 +234,7 @@ header, footer {
 }
 
 #gear, #lyrics-quotes {
-    /* background-color: var(--clr-test3); */
+    /* background-color: var(--clr-test1); */
 }
 
 .album {
@@ -254,7 +276,7 @@ header, footer {
     line-height: 1.5;
 }
 
-blockquote {
+.album-quote {
     font-style: italic;
 }
 
@@ -318,36 +340,58 @@ blockquote {
     color: var(--clr-test1);
 }
 
-/* .gear-item__text__description {
-    color: red;
-} */
 
 /* LYRICS QUOTES */
+
+#lyrics-quotes {
+    background-color: var(--clr-test2);
+    color: var(--clr-test3);
+}
+
+#lyrics-quotes .section-title__heading {
+    color: var(--clr-test3);
+}
 
 .quotes {
     display: grid;
     place-content: center;
     gap: 3rem;
     padding-block: 3rem;
-    /* background-color: var(--clr-test4); */
 }
 
 
 .lyric {
     font-weight: 600;
     font-size: 1.2rem;
+    position: relative;
+}
+
+.lyric::before {
+    content: open-quote;
+    color: var(--clr-test5);
+    position: absolute;
+    left: -1rem;
+    font-weight: 900;
+}
+
+.lyric::after {
+    content: close-quote;
+    color: var(--clr-test5);
+    font-weight: 900;
 }
 
 .lyric-origin {
     text-align: center;
     margin-top: 1rem;
     font-family: 'Montserrat';
+    font-style: italic;
+    color: var(--clr-blue);
 }
 
 /* FOOTER */
 
 footer a:is(:hover) {
-    color: var(--clr-test5);
+    color: var(--clr-blue);
     transition: .2s;
 }
 
@@ -356,7 +400,7 @@ footer a:is(:hover) {
 @media (min-width: 45rem) {
     .wrapper{
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        --gap: 2.5rem;
     }
   }
 
