@@ -131,6 +131,11 @@ textarea:not([rows]) {
     --clr-lightblue: #CDF6FF;
 
     --clr-bluegrey: #4F616D;
+    --clr-test2-light: #798DAD;
+    --clr-test2-sat:  #263140;
+    --clr-darkblue:  #2b3450;
+
+    --clr-darkgrey: #263340;
 
 }
 
@@ -384,7 +389,7 @@ header, footer {
 /* LYRICS QUOTES */
 
 #lyrics-quotes {
-    background-color: var(--clr-bluegrey);
+    background-color: var(--clr-darkgrey);
     color: var(--clr-test3);
 }
 
