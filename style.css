@@ -47,7 +47,7 @@ button, input, label {
 
 
 h1, h2,
-h3, h4, {
+h3, h4 {
   text-wrap: balance;
 }
 
@@ -83,6 +83,7 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
 
 /* CUSTOM PROPERTIES */
 
@@ -147,14 +148,27 @@ h2 {
     text-align: center;
 }
 
+section {
+    padding-block: 3rem 2rem;
+}
+
 
 .section-title {
     text-transform: uppercase;
     font-size: 1.5rem;
-    padding-block: 3rem;
+    padding-block-end: 3rem;
     color: var(--clr-test1);
     letter-spacing: .1rem;
 }
+
+header, footer {
+    text-align: center;
+    background-color: var(--clr-test1);
+    color: var(--clr-test3);
+    padding: 2rem;
+}
+
+/* UTILITIES */
 
 .accent {
     font-weight: 700;
@@ -166,17 +180,10 @@ h2 {
     display: grid;
     gap: var(--gap);
     grid-template-columns: 1fr;
-    padding: 3rem;
+    padding: 1rem 3rem;
 }
 
 /* HEADER */
-
-header, footer {
-    text-align: center;
-    background-color: var(--clr-test1);
-    color: var(--clr-test3);
-    padding: 2rem;
-}
 
 .tagline {
     font-size: 1.3rem;
@@ -225,17 +232,7 @@ header, footer {
 
 /* DISCOGRAPHY */
 
-#discography {
-    background-color: var(--clr-test3);
-}
 
-#gallery {
-    /* background-color: var(--clr-light-blue); */
-}
-
-#gear, #lyrics-quotes {
-    /* background-color: var(--clr-test1); */
-}
 
 .album {
     --bg: transparent;
@@ -244,8 +241,7 @@ header, footer {
 }
 
 .album-1 {
-    /* --bg: #afcce9; */
-    /* --bg: var(--clr-2); */
+   --bg: var(--clr-test3);
 }
 
 .album-2 {
@@ -256,9 +252,8 @@ header, footer {
     --bg: var(--clr-test3-mod2);
 }
 
-
 .album__head {
-    padding: 2rem;
+    padding-block: .5rem 2rem;
     text-align: center;
 }
 
@@ -270,6 +265,7 @@ header, footer {
 
 .album-cover {
     border-radius: 10px;
+    border: 1px solid var(--clr-test1);
 }
 
 .album__info {
@@ -305,10 +301,12 @@ header, footer {
 
 .gallery-img {
     border-radius: 10px;
+    transition: .5s;
     
     &:is(:focus, :hover) {
         opacity: .9;
-        transition: .2s;
+        /* transition: .2s; */
+        transform: scale(1.05);
     }
 }
 
@@ -329,7 +327,7 @@ header, footer {
 .gear-item {
     display: grid;
     grid-template-rows: 4fr 2fr;
-    gap: 1rem;
+    gap: 3rem;
     text-align: center;
 }
 
@@ -338,6 +336,14 @@ header, footer {
     text-transform: uppercase;
     font-weight: 700;
     color: var(--clr-test1);
+}
+
+.gear-item__image {
+    transition: .5s;
+}
+
+.gear-item__image:hover {
+    transform: scale(1.05);
 }
 
 
@@ -355,7 +361,7 @@ header, footer {
 .quotes {
     display: grid;
     place-content: center;
-    gap: 3rem;
+    gap: 4rem;
     padding-block: 3rem;
 }
 
