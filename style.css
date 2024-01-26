@@ -125,6 +125,13 @@ textarea:not([rows]) {
     --clr-gold: #683E00;
     --clr-blue: #00C6FF;
 
+    --clr-brown: #773300;
+
+    --clr-sat-purple: #785464;
+    --clr-lightblue: #CDF6FF;
+
+    --clr-bluegrey: #4F616D;
+
 }
 
 
@@ -149,15 +156,15 @@ h2 {
 }
 
 section {
-    padding-block: 3rem 2rem;
+    padding-block: 4rem 2rem;
 }
 
 
-.section-title {
+.section-title__heading {
     text-transform: uppercase;
-    font-size: 1.5rem;
-    padding-block-end: 3rem;
-    color: var(--clr-test1);
+    font-size: 2rem;
+    padding-block: 2rem;
+    color: var(--clr-sat-purple);
     letter-spacing: .1rem;
 }
 
@@ -202,7 +209,7 @@ header, footer {
 .menu-item__link {
     color: var(--clr-test3);
     text-underline-offset: .5rem;
-    text-decoration-color: var(--clr-test5);
+    text-decoration-color: var(--clr-blue);
     text-decoration: none;
     position: relative;
 }
@@ -229,10 +236,19 @@ header, footer {
 
 /* MAIN */
 
+/* INTRO */
+
+.intro {
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+.intro .section-title__heading {
+    padding-block-end: 1rem;
+}
+
 
 /* DISCOGRAPHY */
-
-
 
 .album {
     --bg: transparent;
@@ -266,6 +282,12 @@ header, footer {
 .album-cover {
     border-radius: 10px;
     border: 1px solid var(--clr-test1);
+    transition: .5s;
+
+    &:is(:focus, :hover) {
+        opacity: .9;
+        transform: scale(1.05);
+    }
 }
 
 .album__info {
@@ -277,11 +299,14 @@ header, footer {
 }
 
 
- 
 /* Album Info-box */
 
+.album__info-box__heading {
+    margin-bottom: .5rem;
+}
+
 .album__info-box ol {
-    padding-inline-start: 2rem;
+    padding-inline-start: 1rem;
 }
 
 .album__info-box ol li {
@@ -290,9 +315,19 @@ header, footer {
     text-wrap: pretty;
 }
 
+.bold {
+    font-weight: 700;
+}
+
+.album__info-box__text {
+    margin-top: 1rem;
+   
+}
 
 
 /* GALLERY */
+
+
 
 .wrapper img {
     height: 100%;
@@ -305,14 +340,13 @@ header, footer {
     
     &:is(:focus, :hover) {
         opacity: .9;
-        /* transition: .2s; */
         transform: scale(1.05);
     }
 }
 
 .gallery-item {
     display: grid;
-    grid-template-rows: 4fr 2fr;
+    grid-template-rows: 4fr 1fr;
     gap: 1rem;
     text-align: center;
 }
@@ -350,7 +384,7 @@ header, footer {
 /* LYRICS QUOTES */
 
 #lyrics-quotes {
-    background-color: var(--clr-test2);
+    background-color: var(--clr-bluegrey);
     color: var(--clr-test3);
 }
 
@@ -374,7 +408,7 @@ header, footer {
 
 .lyric::before {
     content: open-quote;
-    color: var(--clr-test5);
+    color: var(--clr-lightblue);
     position: absolute;
     left: -1rem;
     font-weight: 900;
@@ -382,7 +416,7 @@ header, footer {
 
 .lyric::after {
     content: close-quote;
-    color: var(--clr-test5);
+    color: var(--clr-lightblue);
     font-weight: 900;
 }
 
