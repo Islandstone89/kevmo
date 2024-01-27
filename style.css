@@ -137,6 +137,16 @@ textarea:not([rows]) {
 
     --clr-darkgrey: #263340;
 
+    /* TYPOGRAPHY */
+
+    --ff-arial: 'Arial', 'Helvetica', sans-serif;
+    --ff-montserrat: 'Montserrat', sans-serif;
+    --ff-courgette: 'Courgette', cursive;
+
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-900: 900;
+
 }
 
 
@@ -147,13 +157,14 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--ff-arial);
 }
 
 
 h1 {
    font-size: 3rem; 
-   font-family: 'Montserrat', sans-serif;
+   font-family: var(--ff-montserrat);
+   letter-spacing: .1em;
 }
 
 h2 {
@@ -161,7 +172,7 @@ h2 {
 }
 
 section {
-    padding-block: 4rem 2rem;
+    padding-block: 4rem 3rem;
 }
 
 
@@ -199,15 +210,17 @@ header, footer {
 
 .tagline {
     font-size: 1.3rem;
-    font-family: 'Courgette', cursive;
+    font-family: var(--ff-courgette);
     margin-block: .5rem;
+    color: var(--clr-blue);
 }
 
 .menu {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 1rem;
+    /* text-transform: uppercase; */
 }
 
 
@@ -252,6 +265,10 @@ header, footer {
     padding-block-end: 1rem;
 }
 
+.intro__paragraph {
+    margin-top: .6rem;
+}
+
 
 /* DISCOGRAPHY */
 
@@ -282,6 +299,7 @@ header, footer {
     margin-top: 1rem;
     text-transform: uppercase;
     color: var(--clr-test1);
+    letter-spacing: .05em;
 }
 
 .album-cover {
@@ -401,7 +419,7 @@ header, footer {
     display: grid;
     place-content: center;
     gap: 4rem;
-    padding-block: 3rem;
+    padding-block: 1rem;
 }
 
 
@@ -409,6 +427,7 @@ header, footer {
     font-weight: 600;
     font-size: 1.2rem;
     position: relative;
+    line-height: 1.5;
 }
 
 .lyric::before {
@@ -428,7 +447,7 @@ header, footer {
 .lyric-origin {
     text-align: center;
     margin-top: 1rem;
-    font-family: 'Montserrat';
+    font-family: var(--ff-montserrat);
     font-style: italic;
     color: var(--clr-blue);
 }
