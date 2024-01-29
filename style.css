@@ -220,7 +220,6 @@ header, footer {
     justify-content: center;
     gap: 1.5rem;
     padding: 1rem;
-    /* text-transform: uppercase; */
 }
 
 
@@ -259,6 +258,7 @@ header, footer {
 .intro {
     max-width: 60ch;
     margin-inline: auto;
+    padding-inline: 2rem;
 }
 
 .intro .section-title__heading {
