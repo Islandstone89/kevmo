@@ -206,6 +206,14 @@ header, footer {
     padding: 1rem 3rem;
 }
 
+
+@media (min-width: 45rem) {
+    .wrapper{
+        grid-template-columns: repeat(3, 1fr);
+        --gap: 2.5rem;
+    }
+  }
+
 /* HEADER */
 
 .tagline {
@@ -217,9 +225,17 @@ header, footer {
 
 .menu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1rem;
+}
+
+@media(min-width: 45rem) {
+    .menu {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
 }
 
 
@@ -257,8 +273,7 @@ header, footer {
 
 .intro {
     max-width: 60ch;
-    margin-inline: auto;
-    padding-inline: 2rem;
+    margin-inline: auto;   
 }
 
 .intro .section-title__heading {
@@ -267,6 +282,7 @@ header, footer {
 
 .intro__paragraph {
     margin-top: .6rem;
+    padding-inline: 2rem;
 }
 
 
@@ -349,8 +365,6 @@ header, footer {
 
 
 /* GALLERY */
-
-
 
 .wrapper img {
     height: 100%;
@@ -458,16 +472,3 @@ footer a:is(:hover) {
     color: var(--clr-blue);
     transition: .2s;
 }
-
-
-/* Responsive layout - makes a three column layout instead of a one-column layout */
-@media (min-width: 45rem) {
-    .wrapper{
-        grid-template-columns: repeat(3, 1fr);
-        --gap: 2.5rem;
-    }
-  }
-
-
-
- 
