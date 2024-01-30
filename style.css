@@ -367,9 +367,14 @@ header, footer {
 /* GALLERY */
 
 .wrapper img {
-    height: 100%;
     cursor: pointer;
 }
+
+@media (min-width: 45rem) {
+    .wrapper img{
+        height: 100%;
+    }
+  }
 
 .gallery-img {
     border-radius: 10px;
